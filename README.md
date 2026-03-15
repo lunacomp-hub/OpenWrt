@@ -10,5 +10,5 @@ wget -O - https://raw.githubusercontent.com/lunacomp-hub/OpenWrt/main/install_pi
 ```
 3. Install Check-internet Jika gagal ping ke ISP selama 3x router akan reboot otomatis
 ```
-wget -O - | sh
+wget -O - https://raw.githubusercontent.com/lunacomp-hub/OpenWrt/refs/heads/main/install_check_internet.sh | sh
 ```
