@@ -18,6 +18,7 @@ uci set uhttpd.main.listen_http='0.0.0.0:80'
 uci set uhttpd.main.listen_https='0.0.0.0:443'
 uci commit uhttpd
 /etc/init.d/uhttpd restart
+```
 Lalu buka firewall agar WAN bisa akses LuCI:
 ```
 uci add firewall rule
