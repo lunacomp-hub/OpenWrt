@@ -30,3 +30,14 @@ uci set firewall.@rule[-1].target='ACCEPT'
 uci commit firewall
 /etc/init.d/firewall restart
 ```
+Akses SSH dari jaringan lokal
+```
+uci add firewall wan_ssh_allow
+uci set firewall.wan_ssh_allow=rule
+uci set firewall.wan_ssh_allow.name='Allow SSH from WAN'
+uci set firewall.wan_ssh_allow.src='wan'
+uci set firewall.wan_ssh_allow.proto='tcp'
+uci set firewall.wan_ssh_allow.dest_port='22'
+uci set firewall.wan_ssh_allow.target='ACCEPT'
+
+```
