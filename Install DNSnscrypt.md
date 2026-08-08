@@ -4,7 +4,7 @@ Install paket
 opkg update
 opkg install https-dns-proxy
 opkg install luci-app-https-dns-proxy
-
+````
 ```
 while uci -q delete https-dns-proxy.@https-dns-proxy[0]; do :; done
 
@@ -20,7 +20,7 @@ uci commit https-dns-proxy
 ```
 
 Arahkan dnsmasq ke DoH
-
+```
 uci set dhcp.@dnsmasq[0].noresolv="1"
 uci -q delete dhcp.@dnsmasq[0].server
 uci add_list dhcp.@dnsmasq[0].server="127.0.0.1#5053"
@@ -33,9 +33,10 @@ uci commit dhcp
 Supaya DNS ISP tidak dipakai
 
 Ini penting kalau tujuanmu semua DNS client lewat Cloudflare DoH
-
+```
 uci set network.wan.peerdns='0'
 uci set network.wan6.peerdns='0'
 uci commit network
+```
 
 /etc/init.d/network restart
